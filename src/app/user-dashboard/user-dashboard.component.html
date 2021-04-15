@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- <h1>Welcome to <span style="color:blue">{{ this.dataservice.currentUser }}</span> User Home</h1> -->
+            <h1>Welcome to <span style="color:blue">{{name }}</span> User Home</h1>
+        </div>
+    </div>
+    <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="useraccntno" class="form-label">Account Number</label>
+                    <input type="text" formControlName="useraccntno" name="useraccntno" class="form-control" id="duseraccntno" aria-describedby="emailHelp">
+                    <div *ngIf="(this.depositForm.get('useraccntno')?.touched || this.depositForm.get('useraccntno')?.dirty ) && this.depositForm.get('useraccntno')?.errors" style="color: red;">Invalid Account Number</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" formControlName="userpassword" name="userpassword" class="form-control" id="duserpassword">
+                    <div *ngIf="(this.depositForm.get('userpassword')?.touched || this.depositForm.get('userpassword')?.dirty) && this.depositForm.get('userpassword')?.errors" style="color: red" >Invalid Password</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="useramnt" class="form-label">Amount</label>
+                    <input type="text" formControlName="useramnt" name="useramnt"class="form-control" id="duseramnt">
+                    <div *ngIf="(this.depositForm.get('useramnt')?.touched || this.depositForm.get('useramnt')?.dirty) && this.depositForm.get('useramnt')?.errors" style="color: red" >Invalid Amount</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for=""></label>
+                    <button type="submit"  class="btn btn-primary">Deposit</button>
+                </div>    
+            </div>
+        </div>    
+    </form>
+    <form [formGroup]="depositForm" (ngSubmit)="withdraw()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="useraccntno" class="form-label">Account Number</label>
+                    <input type="text" formControlName="useraccntno" class="form-control" id="wuseraccntno" aria-describedby="emailHelp">
+                    <div *ngIf="(this.depositForm.get('useraccntno')?.touched || this.depositForm.get('useraccntno')?.dirty ) && this.depositForm.get('useraccntno')?.errors" style="color: red;">Invalid Account Number</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" formControlName="userpassword" class="form-control" id="wuserpassword">
+                    <div *ngIf="(this.depositForm.get('userpassword')?.touched || this.depositForm.get('userpassword')?.dirty) && this.depositForm.get('userpassword')?.errors" style="color: red" >Invalid Password</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="useramnt" class="form-label">Amount</label>
+                    <input type="text" formControlName="useramnt" class="form-control" id="wuseramnt">
+                    <div *ngIf="(this.depositForm.get('useramnt')?.touched || this.depositForm.get('useramnt')?.dirty) && this.depositForm.get('useramnt')?.errors" style="color: red" >Invalid Amount</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for=""></label>
+                    <button type="submit"  class="btn btn-primary">Withdraw</button>
+                </div>    
+            </div>
+        </div>    
+    </form>
+</div>

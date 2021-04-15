@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Registration ABK</h1>
+        </div>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <!-- <input type="text" (change)="getUsername($event)" class="form-control" id="accntuser" > -->
+                    <!-- <input type="text" [(ngModel)]="username" name="username" class="form-control" id="accntuser" > -->
+                    <input type="text" formControlName="name" name="name" class="form-control" id="accntuser" >
+                    <div *ngIf="(this.registerForm.get('name')?.touched || this.registerForm.get('name')?.dirty) && this.registerForm.get('name')?.errors" style="color: red;">Invalid username</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Account Number</label>
+                    <input type="text" formControlName="acno" name="acno" class="form-control" id="accntno" >
+                    <div *ngIf="(this.registerForm.get('acno')?.touched || this.registerForm.get('acno')?.dirty) && this.registerForm.get('acno')?.errors" style="color: red;">Invalid username</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" formControlName="password" name="password" class="form-control" id="password">
+                    <div *ngIf="(this.registerForm.get('password')?.touched || this.registerForm.get('password')?.dirty) && this.registerForm.get('password')?.errors" style="color: red;">Invalid username</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-check">
+                <div class="form-group">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- <button type="button" (click)="register();" class="btn btn-primary">Submit</button> -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+      </form>
+</div>    

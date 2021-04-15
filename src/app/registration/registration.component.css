@@ -1,0 +1,7 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+input[type="checkbox"]{
+    margin: 5px 14px 17px -9px;
+}

@@ -1,0 +1,46 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Login Page ABK</h1>
+            </div>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="form-label">Account Number</label>
+                        <!-- <input type="text" (change)="getAcctNo($event)" class="form-control" id="accntno" aria-describedby="emailHelp"> -->
+                        <!-- <input type="text" #accntno class="form-control" id="accntno" aria-describedby="emailHelp"> -->
+                        <!-- <input type="text" [(ngModel)]="accntno" name="accntno" class="form-control" id="accntno" aria-describedby="emailHelp"> -->
+                        <input type="text" formControlName="acno" name="acno" class="form-control" id="accntno" >
+                        <div *ngIf="(this.loginForm.get('acno')?.touched || this.loginForm.get('acno')?.dirty ) && this.loginForm.get('acno')?.errors" style="color: red;">Invalid Account Number</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <!-- <input type="password" #pswd class="form-control" id="password"> -->
+                        <input type="password" formControlName="password" name="password" class="form-control" id="password">
+                        <div *ngIf="(this.loginForm.get('password')?.touched || this.loginForm.get('password')?.dirty ) && this.loginForm.get('password')?.errors" style="color: red;">Invalid Password</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 form-check">
+                    <div class="form-group">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <button type="submit"  class="btn btn-primary">Submit</button>
+                    <a routerLink="register"><span style="margin-left: 10px;">Registration</span></a>
+                </div>
+            </div>
+          </form>
+    </div>    
